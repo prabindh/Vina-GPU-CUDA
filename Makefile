@@ -13,6 +13,7 @@ BOOST_LIB_PATH=$(BOOST_PATH)/installed/lib
 SRC=./lib/*.cpp $(BOOST_PATH)/libs/thread/src/pthread/thread.cpp $(BOOST_PATH)/libs/thread/src/pthread/once.cpp #../boost_1_77_0/boost/filesystem/path.hpMACRO=-DAMD_PLATFORM -DDISPLAY_SUCCESS -DDISPLAY_ADDITION_INFO
 SRC_CUDA = ./inc/cuda/kernel2.cu
 MACRO=$(GRID_DIM) #-DDISPLAY_SUCCESS -DDISPLAY_ADDITION_INFO
+OPTION=-g
 all:out
 out:./main/main.cpp
 	$(NVCC_COMPILER) -o Vina-GPU $(BOOST_INC_PATH) $(VINA_GPU_INC_PATH) $(OPENCL_INC_PATH) ./main/main.cpp -O3 $(SRC) $(SRC_CUDA) $(LIB1) $(LIB2) $(LIB3) -L$(BOOST_LIB_PATH) $(MACRO) $(OPTION) -DBUILD_KERNEL_FROM_SOURCE -DBOOST_TIMER_ENABLE_DEPRECATED

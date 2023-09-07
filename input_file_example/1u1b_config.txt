@@ -9,5 +9,5 @@ size_z = 22.5
 receptor =./input_file_example/1u1b_protein.pdbqt
 ligand = ./input_file_example/1u1b_ligand.pdbqt
 
-thread = 2500
+thread = 8192
 search_depth = 50
